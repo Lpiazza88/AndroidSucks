@@ -6,7 +6,7 @@ public class Employ implements Serializable {
     String fname;
     String lname;
     String uname;
-    String pass;
+    String passw;
     String email;
     String age;
 
@@ -14,7 +14,7 @@ public class Employ implements Serializable {
         uname=u;
         fname=f;
         lname=l;
-        pass=p;
+        passw=p;
         email=e;
         age=a;
     }
@@ -44,11 +44,11 @@ public class Employ implements Serializable {
         this.uname=uname;
     }
 
-    public String getPass(){
-        return pass;
+    public String getPassw(){
+        return passw;
     }
-    public void setPass(String pass){
-        this.pass=pass;
+    public void setPassw(String pass){
+        this.passw=passw;
     }
 
     public String getEmail(){

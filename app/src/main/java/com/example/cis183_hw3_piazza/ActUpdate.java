@@ -14,7 +14,7 @@ public class ActUpdate extends AppCompatActivity {
     TextView uname;
     EditText fname;
     EditText lname;
-    EditText pass;
+    EditText passw;
     EditText email;
     EditText age;
 
@@ -35,7 +35,7 @@ public class ActUpdate extends AppCompatActivity {
         cancel=(Button) findViewById(R.id.btn_cancel);
         fname=(EditText) findViewById(R.id.fname_ET);
         lname=(EditText) findViewById(R.id.lname_ET);
-        pass=(EditText) findViewById(R.id.pass_ET);
+        passw=(EditText) findViewById(R.id.pass_ET);
         email=(EditText) findViewById(R.id.email_ET);
         age=(EditText) findViewById(R.id.age_ET);
         uname=(TextView) findViewById(R.id.username_TV);
@@ -47,7 +47,7 @@ public class ActUpdate extends AppCompatActivity {
         uname.setText(employPassed.getUname());
         fname.setText(employPassed.getFname());
         lname.setText(employPassed.getLname());
-        pass.setText(employPassed.getPass());
+        passw.setText(employPassed.getPassw());
         email.setText(employPassed.getEmail());
         age.setText(employPassed.getAge());
 
@@ -61,7 +61,7 @@ public class ActUpdate extends AppCompatActivity {
             public void onClick(View view) {
                 employPassed.setAge(age.getText().toString());
                 employPassed.setEmail(email.getText().toString());
-                employPassed.setPass(pass.getText().toString());
+                employPassed.setPassw(passw.getText().toString());
                 employPassed.setFname(fname.getText().toString());
                 employPassed.setLname(lname.getText().toString());
 

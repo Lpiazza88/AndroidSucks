@@ -50,7 +50,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return numRows;
     }
 
-    /*@SuppressLint("Range")
+    @SuppressLint("Range")
     public ArrayList<Employ> getAllRows(){
         ArrayList<Employ> Listemploy = new ArrayList<Employ>();
 
@@ -62,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String fname;
         String lname;
         String uname;
-        String pass;
+        String passw;
         String email;
         String age;
 
@@ -71,22 +71,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 uname = cursor.getString(cursor.getColumnIndex("username"));
                 fname = cursor.getString(cursor.getColumnIndex("firstname"));
                 lname = cursor.getString(cursor.getColumnIndex("lastname"));
-                pass = cursor.getString(cursor.getColumnIndex("password"));
+                passw = cursor.getString(cursor.getColumnIndex("password"));
                 email = cursor.getString(cursor.getColumnIndex("emails"));
                 age = cursor.getString(cursor.getColumnIndex("ages"));
 
-                Listemploy.add(new Employ(uname, fname, lname, pass, email, age));
+                Listemploy.add(new Employ(uname, fname, lname, passw, email, age));
             }
             while(cursor.moveToNext());
         }
         db.close();
 
-        //return Listemploy;
-    }*/
+        return Listemploy;
+    }
 
     public void addNewEmploy(Employ u){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("INSERT INTO "+Table_name+" VALUES ('" + u.getUname()+ "','" + u.getFname()+ "','" + u.getLname()+ "','" + u.getPass()+ "','" + u.getEmail()+ "','" + u.getAge()+ "', );");
+        db.execSQL("INSERT INTO "+Table_name+" VALUES ('" + u.getUname()+ "','" + u.getFname()+ "','" + u.getLname()+ "','" + u.getPassw()+ "','" + u.getEmail()+ "','" + u.getAge()+ "', );");
 
         db.close();
     }
@@ -100,7 +100,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public void EmpChange(Employ u){
         SQLiteDatabase db = this.getWritableDatabase();
-        db.execSQL("UPDATE " + Table_name + " SET firstname = '"+u.getFname()+"', lastname = '"+u.getLname()+"', password = '"+u.getPass()+"', emails = '"+u.getEmail()+"', age = '"+u.getAge()+"' WHERE username = '"+u.getUname()+"';");
+        db.execSQL("UPDATE " + Table_name + " SET firstname = '"+u.getFname()+"', lastname = '"+u.getLname()+"', password = '"+u.getPassw()+"', emails = '"+u.getEmail()+"', age = '"+u.getAge()+"' WHERE username = '"+u.getUname()+"';");
 
         db.close();
     }
